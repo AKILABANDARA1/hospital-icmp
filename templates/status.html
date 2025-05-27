@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Probe Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 5em;
+        }
+        .status {
+            font-size: 2em;
+            padding: 1em;
+            display: inline-block;
+            border-radius: 8px;
+            color: white;
+        }
+        .up { background-color: green; }
+        .down { background-color: red; }
+    </style>
+</head>
+<body>
+    <h1>Probe Status</h1>
+    <div class="status {{ status_class }}">{{ status_text }}</div>
+    <p>Target: {{ ip }}:{{ port }}</p>
+</body>
+</html>
