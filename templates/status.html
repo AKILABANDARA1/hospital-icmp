@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Probe Status</title>
+    <title>ICMP/TCP Status Probe</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: #f4f4f4;
             text-align: center;
-            margin-top: 5em;
+            padding-top: 50px;
         }
         .status {
-            font-size: 2em;
-            padding: 1em;
             display: inline-block;
-            border-radius: 8px;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 32px;
             color: white;
         }
-        .up { background-color: green; }
-        .down { background-color: red; }
+        .up {
+            background-color: #28a745;
+        }
+        .down {
+            background-color: #dc3545;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
     </style>
 </head>
 <body>
-    <h1>Probe Status</h1>
-    <div class="status {{ status_class }}">{{ status_text }}</div>
-    <p>Target: {{ ip }}:{{ port }}</p>
+    <div class="status {{ status_class }}">
+        Host is {{ status_text }}
+    </div>
+    <div class="info">
+        IP: {{ ip }} | Port: {{ port }}
+    </div>
 </body>
 </html>
